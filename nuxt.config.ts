@@ -1,8 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   modules: ["@vite-pwa/nuxt"],
+
   pwa: {
+    includeAssets: ["favicon.ico", "icons/*.png", "videos/*.mp4"],
     manifest: {
       name: "Nuxt3-PWA",
       short_name: "Nuxt3-PWA",
@@ -30,9 +33,11 @@ export default defineNuxtConfig({
         },
       ],
     },
+
     workbox: {
       navigateFallback: "/",
     },
+    
     devOptions: {
       enabled: true,
       type: "module",
